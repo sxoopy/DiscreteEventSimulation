@@ -1,0 +1,25 @@
+CeaseTime: 400
+NumberOfNodes: 1
+SingleQueueServiceNode
+Title: Single Queue Node 1
+NumberOfServers: 1
+Name: Server 1
+GanttID: 1
+TimeGenerator: ExponentialRVG
+AverageParameter: 0.8
+TimedQueue
+Name: Queue 1
+CapacityLimit: 10
+CapacityLimitEnabled: False
+NumberOfItineraries: 1
+Title: SSQ Client
+NumberOfItems: 1
+NodeName: Single Queue Node 1
+ServiceTimeGenerator: null
+ClientGeneratorTitle: ClientGenerator
+InterArrivalTimeGeneratorType: ExponentialRVG
+AverageParameter: 1
+NumberOfClientGroup: 1
+Name: Client SSQ Client 1
+ItineraryTitle: SSQ Client
+RelativeFrequency: 100

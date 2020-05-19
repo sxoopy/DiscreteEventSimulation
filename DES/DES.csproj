@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BB780BF-3D88-44F4-B7F2-784595BB40AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DES</RootNamespace>
+    <AssemblyName>DES</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClientGroup.cs" />
+    <Compile Include="Client.cs" />
+    <Compile Include="ClientGenerator.cs" />
+    <Compile Include="ClientGroupListEditor.cs" />
+    <Compile Include="ClientGroupListEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClientGroupListEditorForm.Designer.cs">
+      <DependentUpon>ClientGroupListEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DESmodel.cs" />
+    <Compile Include="DiscreteEvent.cs" />
+    <Compile Include="EventHookList.cs" />
+    <Compile Include="ExponentialRVG.cs" />
+    <Compile Include="IDEScomponent.cs" />
+    <Compile Include="Itinerary.cs" />
+    <Compile Include="ItineraryItemEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItineraryItemEditorForm.Designer.cs">
+      <DependentUpon>ItineraryItemEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ItineraryItemListEditor.cs" />
+    <Compile Include="MultiQueueServiceNode.cs" />
+    <Compile Include="NodeListEditor.cs" />
+    <Compile Include="NodeListEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NodeListEditorForm.Designer.cs">
+      <DependentUpon>NodeListEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NormalRVG.cs" />
+    <Compile Include="PriorityQueue.cs" />
+    <Compile Include="PriorityQueueListEditor.cs" />
+    <Compile Include="PriorityQueueListEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriorityQueueListEditorForm.Designer.cs">
+      <DependentUpon>PriorityQueueListEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomRVGEditor.cs" />
+    <Compile Include="RandomVariateGenerator.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="ServerListEditor.cs" />
+    <Compile Include="ServerListEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServerListEditorForm.Designer.cs">
+      <DependentUpon>ServerListEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SingleQueueServiceNode.cs" />
+    <Compile Include="ServiceNode.cs" />
+    <Compile Include="TimedQueue.cs" />
+    <Compile Include="TimedQueueEditor.cs" />
+    <Compile Include="UniformRVG.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ClientGroupListEditorForm.resx">
+      <DependentUpon>ClientGroupListEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ItineraryItemEditorForm.resx">
+      <DependentUpon>ItineraryItemEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodeListEditorForm.resx">
+      <DependentUpon>NodeListEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriorityQueueListEditorForm.resx">
+      <DependentUpon>PriorityQueueListEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServerListEditorForm.resx">
+      <DependentUpon>ServerListEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

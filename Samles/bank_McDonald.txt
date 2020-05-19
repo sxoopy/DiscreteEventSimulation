@@ -1,0 +1,54 @@
+CeaseTime: 400
+NumberOfNodes: 2
+SingleQueueServiceNode
+Title: Bank
+NumberOfServers: 3
+Name: Teller 1
+GanttID: 1
+TimeGenerator: ExponentialRVG
+AverageParameter: 0.8
+Name: Teller 2
+GanttID: 2
+TimeGenerator: ExponentialRVG
+AverageParameter: 0.8
+Name: Teller 3
+GanttID: 3
+TimeGenerator: ExponentialRVG
+AverageParameter: 0.8
+TimedQueue
+Name: Queue For All Teller
+CapacityLimit: 10
+CapacityLimitEnabled: False
+MultiQueueServiceNode
+Title: McDonald
+NumberOfServers: 2
+Name: Clerk 1
+GanttID: 4
+TimeGenerator: ExponentialRVG
+AverageParameter: 2
+TimedQueue
+Name: Queue for Clerk 1
+CapacityLimit: 5
+CapacityLimitEnabled: True
+Name: Clerk 2
+GanttID: 5
+TimeGenerator: ExponentialRVG
+AverageParameter: 2.5
+TimedQueue
+Name: Queue for Clerk 2
+CapacityLimit: 4
+CapacityLimitEnabled: True
+NumberOfItineraries: 1
+Title: Bank then McDonald
+NumberOfItems: 2
+NodeName: Bank
+ServiceTimeGenerator: null
+NodeName: McDonald
+ServiceTimeGenerator: null
+ClientGeneratorTitle: ClientGenerator
+InterArrivalTimeGeneratorType: ExponentialRVG
+AverageParameter: 1
+NumberOfClientGroup: 1
+Name: Client Bank then McDonald 1
+ItineraryTitle: Bank then McDonald
+RelativeFrequency: 100
