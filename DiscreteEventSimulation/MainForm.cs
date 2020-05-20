@@ -17,7 +17,6 @@ namespace R07546039YYLiuAss08
     {
         public MainForm()
         {
-            //test
             InitializeComponent();
             theModel = new DESmodel();
             propertyGrid.SelectedObject = theModel;
